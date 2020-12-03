@@ -1,0 +1,130 @@
+﻿@model DatabaseAccess.student
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.quota)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quota)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.skills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.skills)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hobby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hobby)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fathers_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fathers_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fathers_occupassion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fathers_occupassion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fathers_contact_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fathers_contact_no)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mothers_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mothers_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mothers_occupassion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mothers_occupassion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mothers_contact_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mothers_contact_no)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.guardians_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.guardians_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.guardians_occupassion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.guardians_occupassion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.guardians_contact_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.guardians_contact_no)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.user.first_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user.first_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usertype.usertype_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usertype.usertype_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.student_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

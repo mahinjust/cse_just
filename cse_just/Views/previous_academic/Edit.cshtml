@@ -1,0 +1,55 @@
+﻿@model DatabaseAccess.previous_academic
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>previous_academic</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.user_id)
+
+        @Html.HiddenFor(model => model.student_id)
+
+        @Html.HiddenFor(model => model.hsc_roll)
+
+        @Html.HiddenFor(model => model.hsc_reg)
+
+        @Html.HiddenFor(model => model.hsc_result)
+
+        @Html.HiddenFor(model => model.hsc_board)
+
+        @Html.HiddenFor(model => model.hsc_college)
+
+        @Html.HiddenFor(model => model.hsc_section)
+
+        @Html.HiddenFor(model => model.ssc_roll)
+
+        @Html.HiddenFor(model => model.ssc_reg)
+
+        @Html.HiddenFor(model => model.ssc_result)
+
+        @Html.HiddenFor(model => model.ssc_board)
+
+        @Html.HiddenFor(model => model.ssc_school)
+
+        @Html.HiddenFor(model => model.ssc_section)
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

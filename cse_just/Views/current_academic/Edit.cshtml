@@ -1,0 +1,43 @@
+﻿@model DatabaseAccess.current_academic
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>current_academic</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.user_id)
+
+        @Html.HiddenFor(model => model.student_id)
+
+        @Html.HiddenFor(model => model.admission_date)
+
+        @Html.HiddenFor(model => model.session)
+
+        @Html.HiddenFor(model => model.dept)
+
+        @Html.HiddenFor(model => model.last_semester_result)
+
+        @Html.HiddenFor(model => model.current_year)
+
+        @Html.HiddenFor(model => model.current_semester)
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

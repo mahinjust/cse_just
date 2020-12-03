@@ -1,0 +1,50 @@
+﻿@model DatabaseAccess.result
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>result</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.session)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.session)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.year_semester)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.year_semester)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cgpa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cgpa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.student.skills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.student.skills)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.result_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

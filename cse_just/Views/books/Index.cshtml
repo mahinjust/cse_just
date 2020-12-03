@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DatabaseAccess.book>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.book_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.book_author)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.edition)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.specification)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user.first_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.book_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.book_author)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.edition)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.specification)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.user.first_name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.book_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.book_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.book_id })
+        </td>
+    </tr>
+}
+
+</table>

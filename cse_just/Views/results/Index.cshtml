@@ -1,0 +1,51 @@
+﻿@model IEnumerable<DatabaseAccess.result>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.session)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.year_semester)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cgpa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.student.skills)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.session)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.year_semester)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cgpa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.student.skills)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.result_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.result_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.result_id })
+        </td>
+    </tr>
+}
+
+</table>

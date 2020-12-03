@@ -1,0 +1,87 @@
+﻿@model IEnumerable<DatabaseAccess.routine>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.class_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.day)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subject_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subject_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.session)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.start_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.end_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.duration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.comment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.teacher.designation)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.class_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.day)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subject_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subject_code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.session)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.start_time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.end_time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.duration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.teacher.designation)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.routine_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.routine_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.routine_id })
+        </td>
+    </tr>
+}
+
+</table>
