@@ -83,7 +83,7 @@ namespace cse_just.Controllers
                         Session["religion"] = string.Empty;
                         Session["nationality"] = string.Empty;
                         Session["profile_pic"] = string.Empty;
-                        ViewBag.message = "User Name and Password is incorrect!";
+                        ViewBag.message = "User Name or Password is incorrect!";
                     }
 
                 }

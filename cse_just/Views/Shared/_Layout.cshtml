@@ -13,6 +13,12 @@
     <meta name="author" content="">
 
     <title>CSE-JUST</title>
+    <style>
+        #div1 {
+            font-size: 48px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom fonts for this template-->
     <link href="~/Content/Admin Template/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -35,10 +41,26 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
-                <div class="sidebar-brand-icon rotate-n-15">
+                <div id="div1" class="fa"></div>
 
-
-                </div>
+                <script>
+                    function smile() {
+                        var a;
+                        a = document.getElementById("div1");
+                        a.innerHTML = "&#xf118;";
+                        setTimeout(function () {
+                            a.innerHTML = "&#xf11a;";
+                        }, 1000);
+                        setTimeout(function () {
+                            a.innerHTML = "&#xf119;";
+                        }, 2000);
+                        setTimeout(function () {
+                            a.innerHTML = "&#xf11a;";
+                        }, 3000);
+                    }
+                    smile();
+                    setInterval(smile, 4000);
+                </script>
                 <div class="sidebar-brand-text mx-3">Dashboard<sup>user</sup></div>
             </a>
 
@@ -48,29 +70,52 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>CSE</span>
+                    <i class='fas fa-desktop' style='font-size:24px'></i>
+                    <span>CSE Department</span>
                 </a>
             </li>
+            <hr class="sidebar-divider">
+            <div class="sidebar-heading">
+                <b>User Section</b>
+            </div>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUser" aria-expanded="true" aria-controls="collapseUser">
+                    <i class='fas fa-user-alt' style='font-size:24px'></i>
+                    <span>User Information</span>
+                </a>
+                <div id="collapseUser" class="collapse" aria-labelledby="headingUser" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
 
+                        @Html.ActionLink("User Type Registration", "#", "#", null, new { @class = "collapse-item" })
+
+                        @Html.ActionLink("User Registration", "#", "#", null, new { @class = "collapse-item" })
+
+                    </div>
+
+                </div>
+            </li>
             <hr class="sidebar-divider">
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                <b>Student Information:</b>
+                <b>Student Section</b>
             </div>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStudent" aria-expanded="true" aria-controls="collapseStudent">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Student</span>
+                    <i class='fas fa-user-graduate' style='font-size:24px'></i>
+                    <span>Student Information</span>
                 </a>
                 <div id="collapseStudent" class="collapse" aria-labelledby="headingStudent" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
 
                         @Html.ActionLink("Current Academic Status", "#", "#", null, new { @class = "collapse-item" })
-                        <hr>
-                        @Html.ActionLink("Previous Academic Status", "Create", "StudentPromotTables", null, new { @class = "collapse-item" })
+
+                        @Html.ActionLink("Previous Academic Status", "#", "#", null, new { @class = "collapse-item" })
+
+                        @Html.ActionLink("Co-Curricular Activities", "#", "#", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Result", "#", "#", null, new { @class = "collapse-item" })
                     </div>
+
                 </div>
             </li>
 
@@ -78,25 +123,19 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Staff Registration
+                Teacher Section
             </div>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEmployee" aria-expanded="true" aria-controls="collapseEmployee">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Employees</span>
+                    <i class='fas fa-user-tie' style='font-size:24px'></i>
+                    <span>Teacher Information</span>
                 </a>
                 <div id="collapseEmployee" class="collapse" aria-labelledby="headingEmployee" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Staff Registration:</h6>
-                        @Html.ActionLink("Staff", "Index", "StaffTables", null, new { @class = "collapse-item" })
 
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Attendance:</h6>
-                        @Html.ActionLink("Staff Attendance", "Index", "StaffAttendanceTables", null, new { @class = "collapse-item" })
 
-                        <h6 class="collapse-header">Salary:</h6>
-                        @Html.ActionLink("Employee Salary", "Create", "EmployeeSalaryTables", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Salaries Records", "Index", "EmployeeSalaryTables", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Profile", "#", "#", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Career", "#", "#", null, new { @class = "collapse-item" })
 
                     </div>
                 </div>
@@ -107,14 +146,16 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                Academic Section
+
             </div>
+
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Settings</span>
+                    <i class='fas fa-book-open' style='font-size:24px'></i>
+                    <span>E-Library</span>
                 </a>
 
             </li>
@@ -122,8 +163,8 @@
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Configuration</span>
+                    <i class='fas fa-laptop-code' style='font-size:24px'></i>
+                    <span>Class Materials</span>
                 </a>
 
             </li>
@@ -131,60 +172,34 @@
             <!-- Nav Item - Sessions Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSessions" aria-expanded="true" aria-controls="collapseSessions">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Sessions</span>
+                    <i class='fas fa-chalkboard' style='font-size:24px'></i>
+                    <span>E-Notice</span>
                 </a>
 
             </li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClass" aria-expanded="true" aria-controls="collapseClass">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Classes</span>
+                    <i class='far fa-calendar-alt' style='font-size:24px'></i>
+                    <span>Class Routine</span>
                 </a>
 
             </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Examination
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Exam Setting</span>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClass" aria-expanded="true" aria-controls="collapseClass">
+                    <i class='fas fa-chalkboard-teacher' style='font-size:24px'></i>
+                    <span>Google Class Room</span>
                 </a>
 
             </li>
-
-            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTimeTable" aria-expanded="true" aria-controls="collapseTimeTable">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span> Time Table Setting</span>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClass" aria-expanded="true" aria-controls="collapseClass">
+                    <i class='fab fa-facebook-messenger' style='font-size:24px'></i>
+                    <span>Messaging</span>
                 </a>
 
             </li>
 
-            <!-- Nav Item - Charts -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Reports
-            </div>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseReport" aria-expanded="true" aria-controls="collapseReport">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Basic Reports</span>
-                </a>
-
-            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
