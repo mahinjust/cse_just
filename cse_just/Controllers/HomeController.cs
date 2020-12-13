@@ -52,11 +52,6 @@ namespace cse_just.Controllers
                         {
                             return RedirectToAction("Contact");
                         }
-
-                        //else if (finduser[0].UserTypeID == 1)
-                        //{
-                        //   url =  "About";
-                        //}
                         else
                         {
                             url = "About";
