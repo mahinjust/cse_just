@@ -146,10 +146,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Admin Template\css\about.css" />
     <Content Include="Content\Admin Template\css\login.css" />
     <Content Include="Content\Admin Template\css\sb-admin-2.css" />
     <Content Include="Content\Admin Template\css\sb-admin-2.min.css" />
+    <Content Include="Content\Admin Template\img\about.jpg" />
     <Content Include="Content\Admin Template\img\just.png" />
+    <Content Include="Content\Admin Template\img\login.jpg" />
     <Content Include="Content\Admin Template\img\source-404.jpg" />
     <Content Include="Content\Admin Template\img\undraw_posting_photo.svg" />
     <Content Include="Content\Admin Template\img\welcome.gif" />

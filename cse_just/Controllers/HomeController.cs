@@ -133,14 +133,14 @@ namespace cse_just.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Welcome to Jashore University Of Science & Technology Arena";
+            ViewBag.Message = "THE CHAIRMAN";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Welcome to Jashore University Of Science & Technology Arena";
+            ViewBag.Message = "THE CHAIRMAN";
 
             return View();
         }
