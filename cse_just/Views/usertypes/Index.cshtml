@@ -1,33 +1,63 @@
 ﻿@model IEnumerable<DatabaseAccess.usertype>
-
+<br /><br />
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "UserType Information";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.usertype_name)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.usertype_name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.usertype_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.usertype_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.usertype_id })
-        </td>
-    </tr>
-}
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">User Type Information </h6>
 
-</table>
+
+
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody width="100px">
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.usertype_id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.usertype_name)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.usertype_id }, new { @class = "btn btn-primary" })
+                                @Html.ActionLink("Details", "Details", new { id = item.usertype_id }, new { @class = "btn btn-info" })
+                                @Html.ActionLink("Delete", "Delete", new { id = item.usertype_id }, new { @class = "btn btn-danger" })
+
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+            <p>
+                <b>To Create A New Usertype Click Here--></b> @Html.ActionLink("Create", "Create", null, new { @class = "btn btn-success" })
+
+            </p>
+        </div>
+    </div>
+</div>

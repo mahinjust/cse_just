@@ -1,30 +1,30 @@
 ﻿@model DatabaseAccess.usertype
-
+<br /><br />
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Create New Usertype";
 }
 
-<h2>Create</h2>
+<h3>Create New UserType Here:</h3>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>usertype</h4>
-        <hr />
+
+    <div class="form-horizontal card shadow mb-4">
+
+        <br>
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.usertype_id, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.usertype_id, "ID", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
                 @Html.EditorFor(model => model.usertype_id, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.usertype_id, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.usertype_name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.usertype_name, "Name", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
                 @Html.EditorFor(model => model.usertype_name, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.usertype_name, "", new { @class = "text-danger" })
             </div>
@@ -32,12 +32,11 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-success text-left" />
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-warning" })
             </div>
         </div>
-    </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    </div>
+
+}

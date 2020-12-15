@@ -78,7 +78,7 @@ namespace cse_just.Controllers
                         Session["religion"] = string.Empty;
                         Session["nationality"] = string.Empty;
                         Session["profile_pic"] = string.Empty;
-                        ViewBag.message = "User Name or Password is incorrect!";
+                        ViewBag.message = "User Name or Password Is Incorrect!";
                     }
 
                 }
@@ -133,14 +133,14 @@ namespace cse_just.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "THE CHAIRMAN";
+            ViewBag.Message = "THE CHAIRMAN OF CSE DEPARTMENT,";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "THE CHAIRMAN";
+            ViewBag.Message = "THE CHAIRMAN OF CSE DEPARTMENT,";
 
             return View();
         }
