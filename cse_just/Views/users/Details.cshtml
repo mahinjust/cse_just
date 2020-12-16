@@ -1,17 +1,18 @@
 ﻿@model DatabaseAccess.user
-
+<br />
+<br />
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "User Details";
 }
 
-<h2>Details</h2>
+<h4 class="m-0 font-weight-bold text-primary">User Details :</h4>
+<br />
 
-<div>
-    <h4>user</h4>
-    <hr />
+<div class="card shadow mb-4">
+    <br />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.first_name)
+            First Name
         </dt>
 
         <dd>
@@ -19,7 +20,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.last_name)
+            Last Name
         </dt>
 
         <dd>
@@ -27,7 +28,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.birth_date)
+            Date Of Birth
         </dt>
 
         <dd>
@@ -35,7 +36,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.contact_no)
+            Contact No
         </dt>
 
         <dd>
@@ -43,7 +44,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.email_address)
+            Email Address
         </dt>
 
         <dd>
@@ -51,7 +52,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.password)
+            Password
         </dt>
 
         <dd>
@@ -59,7 +60,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.current_address)
+            Current Address
         </dt>
 
         <dd>
@@ -67,7 +68,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.permanent_address)
+            Permanent Address
         </dt>
 
         <dd>
@@ -75,7 +76,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.gender)
+            Gender
         </dt>
 
         <dd>
@@ -83,7 +84,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.blood_group)
+            Blood Group
         </dt>
 
         <dd>
@@ -91,7 +92,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.religion)
+            Religion
         </dt>
 
         <dd>
@@ -99,7 +100,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.nationality)
+            Nationality
         </dt>
 
         <dd>
@@ -107,7 +108,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.profile_pic)
+            Profile Picture
         </dt>
 
         <dd>
@@ -115,7 +116,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.usertype.usertype_name)
+            UserType Name
         </dt>
 
         <dd>
@@ -123,8 +124,9 @@
         </dd>
 
     </dl>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.user_id }, new { @class = "btn btn-info" })
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-warning" })
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.user_id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

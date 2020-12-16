@@ -391,7 +391,7 @@
                             <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"> @Session["UserName"]</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><b>Welcome, @String.Concat(this.Session["first_name"], " ", this.Session["last_name"])</b></span>
                                 <img class="img-profile rounded-circle" src="~/Content/Admin Template/img/welcome.gif">
 
                             </a>

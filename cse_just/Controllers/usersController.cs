@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using DatabaseAccess;
 
-namespace cse_just.Controllers
+namespace Cse_Just.Controllers
 {
     public class usersController : Controller
     {
@@ -17,6 +17,10 @@ namespace cse_just.Controllers
         // GET: users
         public ActionResult Index()
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["last_name"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             var users = db.users.Include(u => u.usertype);
             return View(users.ToList());
         }
@@ -24,6 +28,10 @@ namespace cse_just.Controllers
         // GET: users/Details/5
         public ActionResult Details(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["last_name"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -39,6 +47,10 @@ namespace cse_just.Controllers
         // GET: users/Create
         public ActionResult Create()
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["last_name"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             ViewBag.usertype_id = new SelectList(db.usertypes, "usertype_id", "usertype_name");
             return View();
         }
@@ -48,8 +60,12 @@ namespace cse_just.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "user_id,usertype_id,first_name,last_name,birth_date,contact_no,email_address,password,current_address,permanent_address,gender,blood_group,religion,nationality,profile_pic")] user user)
+        public ActionResult Create(user user)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["last_name"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (ModelState.IsValid)
             {
                 db.users.Add(user);
@@ -64,6 +80,10 @@ namespace cse_just.Controllers
         // GET: users/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["last_name"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -82,8 +102,12 @@ namespace cse_just.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "user_id,usertype_id,first_name,last_name,birth_date,contact_no,email_address,password,current_address,permanent_address,gender,blood_group,religion,nationality,profile_pic")] user user)
+        public ActionResult Edit(user user)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["last_name"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(user).State = EntityState.Modified;
@@ -97,6 +121,10 @@ namespace cse_just.Controllers
         // GET: users/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["last_name"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -114,6 +142,10 @@ namespace cse_just.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["last_name"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             user user = db.users.Find(id);
             db.users.Remove(user);
             db.SaveChanges();
